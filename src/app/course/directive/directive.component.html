@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-xs-12">
+                <h3>*Structure Directive</h3>
+                <strong>*ngIf</strong>
+                <p *ngIf="createServer;else noServer">Server was created!</p>
+                <ng-template #noServer>
+                    <p>No Server was created!</p>
+                </ng-template>
+                <button class="btn btn-primary" (click)="oncreateServer()">Create Server</button>
+            </div>
+            <div class="col-xs-12 dir">
+                <strong>*ngFor</strong>
+                <ul *ngFor="let item of serverNames; let i=index">
+                    <li>{{item}}</li>
+                </ul>
+
+            </div>
+            <div class="col-xs-12">
+                <h3>*Attribute Directive</h3>
+                <strong>ngStyle & ngClass</strong>
+                <p [ngStyle]="{backgroundColor :serverStatus ==='offline' ? 'red' :'green' }">The server status of
+                    {{randomValue}} is {{serverStatus}}</p>
+                <p [ngClass]="{'online': serverStatus ==='online'}">The server status of {{randomValue}} is
+                    {{serverStatus}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-xs-12">
+                <h3>Custom Directive</h3>
+                <p appHighlight>Style me with basic highlight directive</p>
+                <p appBatterHighllight>Style me with batter highlight directive</p>
+                <p appMouseenterover>Style me with batter HostListner directive example</p>
+                <p appDynamicpassdata [mouseentercolor]="'green'" [mouseleavecolor]="'transparent'">Style me with batter
+                    dynamic data pass in directive example</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-xs-12">
+                <h3>Custom Structural Directive</h3>
+                <h4 *appUnless="true">Hii! this is structural directive</h4>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="card">
+        <div class="card-body">
+            <div class="col-xs-12">
+                <h3>ngSwitch Directive</h3>
+                <div [ngSwitch]="number">
+                    <p [ngSwitchCase]="'5'">value is 5</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

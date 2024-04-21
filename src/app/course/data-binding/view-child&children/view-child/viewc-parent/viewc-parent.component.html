@@ -1,0 +1,12 @@
+<!-- <app-viewc-child></app-viewc-child> -->
+<div class="container">
+    <input type="checkbox" id="showCounter" name="showCounter" [(ngModel)]="showCounter">
+    <ng-container *ngIf="showCounter">
+        <button type="button" class="btn btn-primary" (click)="IncNumber()">Increment</button> &nbsp;
+        <button type="button" class="btn btn-warning" (click)="decNumber()">Decrement</button>
+
+        <app-viewc-child></app-viewc-child>
+        <!--  error : {{static:true}}
+        Cannot read properties of undefined reading increment  -->
+    </ng-container>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-primary" (click)="gotoHome()">Home</button>
+            <button class="btn btn-success btn" (click)="redirectTOAbout()">About</button>
+            <button class="btn btn-secondary btn" [routerLink]="['/course/query-params']"
+                [queryParams]="{name:'mohit' , id:1}" [fragment]="'loading'">Query Params</button>
+            <button class="btn btn-secondary btn" (click)="redirectToQueryParamsComp()">Query Params</button>
+            <button class="btn btn-warning btn" (click)="goToChildRoute()">Go to child-route</button>
+            <button class="btn btn-success btn" (click)="canDeactivateRouteExample()">canDeactivate Route</button>
+            <button class="btn btn-primary btn" (click)="goTOresolverRoute()">Route resolver</button>
+        </div>
+    </div>
+</div>

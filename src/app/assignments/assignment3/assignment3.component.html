@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="ass3">Assignment 3</h1>
+            <button class="btn btn-primary" (click)="ondisplayData()">Display Details</button>
+            <p *ngIf="showsecret">Secret password = 'Mkpatel@1234'</p>
+            <div *ngFor="let num of numbers" [ngStyle]="{backgroundColor : num >= 5 ? 'blue':'white'}"
+                [ngClass]="{'white': num>=5}">
+                <span>{{num}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-xs-12">
+                <h3>* String Interpolation</h3>
+                <p>{{'Server'}} with id {{serverId}} is {{serverStatus}}</p>
+            </div>
+            <div class="col-xs-12">
+                <h3>* Property binding</h3>
+                <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+            </div>
+            <div class="col-xs-12">
+                <!--       we can not use both mixing -->
+                <h3>* Property binding insted of string interpolation</h3>
+                <p [innerText]="allowNewServer"></p>
+            </div>
+            <div class="col-xs-12">
+                <h3>* Event binding</h3>
+                <button class="btn btn-primary" (click)="onCreateServer()">Add Server</button>
+                <p>{{serverCreationStatus}}</p>
+
+                <h3>Passing and using data with binding</h3>
+                <input type="text" class="form-control serverName" (input)="oncreateServerName($event)" />
+                <p>{{serverName}}</p>
+            </div>
+            <div class="col-xs-12">
+                <h3>* Two way data binding</h3>
+                <input type="text" class="form-control serverName" [(ngModel)]="serverProperty" />
+                <p>{{serverProperty}}</p>
+            </div>
+        </div>
+    </div>
+</div>
